@@ -33,20 +33,43 @@
               <span class="icon-bar"></span>
             </button>
 
-            <a class="navbar-brand" href="#/">storefront</a>
+            <a class="navbar-brand" href="#/">Essences</a>
           </div>
 
           <div class="collapse navbar-collapse" id="js-navbar-collapse">
 
-            <ul class="nav navbar-nav">
-              <li ng-class="{ active: isActive('/')}"><a href="#/">Home</a></li>
-              <li ng-class="{ active: isActive('/store')}"><a ng-href="#/store">Store</a></li>
-              <li ng-class="{ active: isActive('/cart')}"><a ng-href="#/cart">Cart</a></li>
+            <ul class="nav navbar-nav" ng-controller="MainCtrl">
+
+
+              <span dropdown on-toggle="toggled(open)">
+                <a href id="simple-dropdown" dropdown-toggle>
+                  PRODUCTS <i class="glyphicon glyphicon-chevron-right"></i>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="simple-dropdown">
+                  <li ng-repeat="category in categories">
+                    <a ng-href="#/category/{{category.id}}">{{category.title}}</a>
+                  </li>
+                </ul>
+              </span>
+
+
+              <span dropdown on-toggle="toggled(open)">
+                <a href id="simple-dropdown" dropdown-toggle>
+                  SCENTS <i class="glyphicon glyphicon-chevron-right"></i>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="simple-dropdown">
+                  <li ng-repeat="category in categories">
+                    <a ng-href="#/category/{{category.id}}">{{category.title}}</a>
+                  </li>
+                </ul>
+              </span>
+
+
+              <li><a ng-href="#/store">CONTACT US</a></li>
             </ul>
             <div ng-if="cart" id="cart" class="pull-right">
-              <a class="btn btn-success btn-arge" href="#/cart">
-                <i class="glyphicon glyphicon-shopping-cart"></i>
-                {{cart.total_items}}
+              <a class="btn btn-large" href="#/cart">
+                CART<strong> ( {{cart.total_items }} ) </strong>  
               </a>
             </div>
           </div>
@@ -91,6 +114,8 @@
     <!-- endbower -->
     <script src="scripts/vendor/moltin.min.js"></script>
     <!-- endbuild -->
+    <script src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>

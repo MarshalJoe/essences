@@ -11,6 +11,7 @@
 angular
   .module('storefrontApp', [
     'storefrontApp.moltin',
+    'ui.bootstrap',
     'ngAnimate',
     'ngCookies',
     'ngResource',

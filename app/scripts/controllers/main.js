@@ -8,10 +8,15 @@
  * Controller of the storefrontApp
  */
 angular.module('storefrontApp')
-  .controller('MainCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+.controller('MainCtrl', function($scope, MoltinAuth) {
+
+	$scope.awesomeThings = ['hel', 'something', 'hey'];
+
+	MoltinAuth.then(function(moltin) {
+        moltin.Category.List(null, function(categories) {
+        	$scope.categories = categories;
+        	console.log(categories);
+        });
+    })
+
+});

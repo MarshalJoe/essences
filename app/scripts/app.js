@@ -40,16 +40,6 @@ angular
               });
             })
             return deferred.promise;
-          },
-          features: function($q, MoltinAuth) {
-            var deferred = $q.defer();
-            MoltinAuth.then(function(moltin) {
-              //"Homepage Features" collection
-              moltin.Product.List({collection:'947420948187841171'}, function(collection) {
-                deferred.resolve(collection);
-              });
-            });
-            return deferred.promise;
           }
         }
       })

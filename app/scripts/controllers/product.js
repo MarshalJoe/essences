@@ -12,7 +12,7 @@ angular.module('storefrontApp')
     $scope.product = product;
     $scope.addStatus = null;
 
-    $scope.addCart = function() {
+    $scope.addToCart = function() {
       $scope.addStatus = 'Adding to cart...';
       // Insert(id, qty, modifiers/size, callback)
       moltin.Cart.Insert(product.id, 1, null, function(cart) {
@@ -24,7 +24,7 @@ angular.module('storefrontApp')
         $scope.$apply();
         $timeout(function() {
           $scope.addStatus = null;
-        }, 1000);
+        }, 2000);
       });
     }
     console.log(product);

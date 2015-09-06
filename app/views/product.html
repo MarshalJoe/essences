@@ -1,17 +1,11 @@
-<h1>{{ product.title }}</h1>
+<h1> {{ product.title }} </h1>
 
-<div class="row">
-  <div class="col-sm-6">
-    <a ng-href="#/product/{{product.id}}">
-      <img src="{{product.images[0].url.http}}" alt="{{product.title}}" width="100%"/>
-    </a>
-  </div>
-  <div class="col-sm-6">
-    <strong>{{ product.pricing.formatted.without_tax }}</strong>
+<img class="product-image" ng-src="{{product.images[0]['url']['http'] }}">
 
-    <button ng-if="!addStatus" ng-click="addCart()" class="btn btn-success">Add to Cart</button>
-    <button ng-if="addStatus" class="btn btn-warning">{{addStatus}}</button>
+<p ng-bind-html="product.description"></p>
 
-    <div ng-bind-html="product.description"></div>
-  </div>
-</div>
+<h2>{{ product.price }}</h2>
+
+<button class="btn btn-large" onclick="window.history.back()">Back</button>
+<button ng-if="!addStatus" class="btn btn-large btn-success" ng-click="addToCart()">Add to Cart</button>
+<button ng-if="addStatus" class="btn btn-large btn-success disabled" ng-click="addToCart()">{{addStatus}}</button>

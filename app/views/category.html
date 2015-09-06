@@ -1,10 +1,13 @@
 <h1>{{ category.title }}</h1>
 
-<div class="row">
-  <div class="col-sm-2" ng-repeat="prod in products">
-    <a ng-href="#/product/{{prod.id}}">
-      <img src="{{prod.images[0].url.http}}" alt="{{prod.title}}" width="100%"/>
-    <p>{{ prod.title }}</p>
-    </a>
-  </div>
-</div>
+	<div class="row">
+		<div ng-repeat="product in products">
+			<a ng-href="#/product/{{product.id}}">
+  				<div class="col-md-4 product-cell">
+  					<h4>{{product.title}}</h4>
+  					<img class="product-cell-image" ng-src="{{product.images[0]['url']['http']}}">
+  					<p>{{product.description}}</p>
+  				</div>
+  			</a>
+  		</div>
+	</div>

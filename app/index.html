@@ -44,7 +44,7 @@
               <li ng-class="{ active: isActive('/cart')}"><a ng-href="#/cart">Cart</a></li>
             </ul>
             <div ng-if="cart" id="cart" class="pull-right">
-              <a class="btn btn-success btn-sm" href="#/cart">
+              <a class="btn btn-success btn-arge" href="#/cart">
                 <i class="glyphicon glyphicon-shopping-cart"></i>
                 {{cart.total_items}}
               </a>
@@ -55,7 +55,8 @@
     </div>
 
     <div class="container">
-    <div ng-view=""></div>
+    <route-loading-indicator></route-loading-indicator>  
+    <div ng-if="!isRouteLoading" ng-view=""></div>
     </div>
 
     <div class="footer">
@@ -95,7 +96,6 @@
         <script src="scripts/app.js"></script>
         <script src="scripts/services/moltin.js"></script>
         <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/about.js"></script>
         <script src="scripts/controllers/store.js"></script>
         <script src="scripts/controllers/category.js"></script>
         <script src="scripts/controllers/product.js"></script>
@@ -104,5 +104,6 @@
         <script src="scripts/controllers/payment.js"></script>
         <script src="scripts/controllers/complete.js"></script>
         <!-- endbuild -->
+        <script src="scripts/services/routeLoader.js"></script>
 </body>
 </html>

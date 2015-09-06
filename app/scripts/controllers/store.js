@@ -8,8 +8,6 @@
  * Controller of the storefrontApp
  */
 angular.module('storefrontApp')
-  .controller('StoreCtrl', function ($scope, categories, features) {
+  .controller('StoreCtrl', function ($scope, categories) {
     $scope.categories = categories;
-    $scope.features = features;
-    console.log(features);
   });

@@ -8,12 +8,11 @@
  * Controller of the storefrontApp
  */
 angular.module('storefrontApp')
-.controller('MainCtrl', function($scope, $location, MoltinAuth) {
+.controller('MainCtrl', function ($scope, $location, MoltinAuth) {
 
 	MoltinAuth.then(function(moltin) {
         moltin.Category.List(null, function(categories) {
         	$scope.categories = categories;
-        	console.log(categories);
         });
     });
 

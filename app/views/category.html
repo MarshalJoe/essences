@@ -1,13 +1,22 @@
-<h1>{{ category.title }}</h1>
+<div class="product-container">
+  <h1>{{ category.title }}</h1>
 
-	<div class="row">
-		<div ng-repeat="product in products">
-			<a ng-href="#/product/{{product.id}}">
-  				<div class="col-md-4 product-cell">
-  					<h4>{{product.title}}</h4>
-  					<img class="product-cell-image" ng-src="{{product.images[0]['url']['http']}}">
-  					<p>{{product.description}}</p>
-  				</div>
-  			</a>
-  		</div>
-	</div>
+  <div class="row">
+    <div ng-repeat="product in products">
+        <div class="col-md-3 product-cell">
+          <h4>{{product.title}}</h4>
+          <div class="product-cell-image-container">
+            <a ng-href="#/product/{{product.id}}">
+              <img class="product-cell-image" ng-src="{{product.images[0]['url']['http']}}">
+            </a>
+          </div>
+          <p>{{product.description}}</p>
+          <span class="price pull-left">&#36;{{product.price}}</span>
+          <a ng-click="addToCart(product)" class="btn-category pull-right">
+            <span ng-show="!product.addStatus"><i class="glyphicon glyphicon-plus"></i> Add</span>
+            <span ng-show="product.addStatus">{{product.addStatus}}</span>
+          </a>
+        </div>
+    </div>
+  </div>
+</div>

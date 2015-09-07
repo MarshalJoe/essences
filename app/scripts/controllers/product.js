@@ -27,5 +27,4 @@ angular.module('storefrontApp')
         }, 2000);
       });
     }
-    console.log(product);
   });

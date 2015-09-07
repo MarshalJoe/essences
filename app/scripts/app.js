@@ -65,6 +65,9 @@ angular
               });
             })
             return deferred.promise;
+          },
+          moltin: function(MoltinAuth) {
+            return MoltinAuth;
           }
         }
       })

@@ -1,11 +1,21 @@
-<h1> {{ product.title }} </h1>
+<div class="product-container">
+	<div class="product-view">
+		<div class="row">
+			<div class="col-md-8">
+				<h1> {{ product.title }} </h1>
+				<img class="product-image" ng-src="{{product.images[0]['url']['http'] }}">
+				<p ng-bind-html="product.description"></p>
+				<div class="price">&#36;{{ product.price }}</div>
 
-<img class="product-image" ng-src="{{product.images[0]['url']['http'] }}">
+				<a class="btn-product" onclick="window.history.back()">Back</a>
+				&nbsp;
+				<a class="btn-product" ng-click="addToCart()">
+					<span ng-show="!addStatus">Add to Cart</span>
+            		<span ng-show="addStatus">{{addStatus}}</span>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
 
-<p ng-bind-html="product.description"></p>
 
-<h2>{{ product.price }}</h2>
-
-<button class="btn btn-large" onclick="window.history.back()">Back</button>
-<button ng-if="!addStatus" class="btn btn-large btn-success" ng-click="addToCart()">Add to Cart</button>
-<button ng-if="addStatus" class="btn btn-large btn-success disabled" ng-click="addToCart()">{{addStatus}}</button>

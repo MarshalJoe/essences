@@ -11,6 +11,7 @@ angular.module('storefrontApp')
   .controller('CategoryCtrl', function ($scope, category, products, $timeout, $rootScope, moltin) {
     $scope.category = category;
     $scope.products = products;
+    $scope.searchProducts = {};
 
     $scope.addToCart = function(product) {
       product.addStatus = 'Adding...';

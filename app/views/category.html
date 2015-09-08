@@ -1,8 +1,25 @@
 <div class="product-container">
-  <h1>{{ category.title }}</h1>
-  <br>
+  <div class="title">
+    <div class="row">
+
+
+      <form class="form-inline">
+        <div class="form-group form-group-lg">
+          <label for="exampleInputName2">{{ category.title }}</label>
+          
+
+          <div class="input-group">
+            <input class="input-lg" type="search" class="form-control" ng-model="searchProducts.title" id="exampleInputName2" placeholder="Filter Products" aria-describedby="addon">
+            <span class="input-group-addon" id="addon"> <i class="glyphicon glyphicon-search"></i> </span>
+          </div>
+        </div>
+      </form>
+
+
+    </div>
+  </div>
   <div class="row">
-    <div ng-repeat="product in products">
+    <div ng-repeat="product in products | filter:searchProducts">
         <div class="col-md-3 product-cell">
           <div class="title">{{product.title}}</div>
           <div class="product-cell-image-container">

@@ -5,6 +5,23 @@
 	padding-left: 75px;
 }
 
+.product-container .title label {
+	font-size: 3rem;
+	padding-top:25px;
+}
+
+.product-container .title {
+	margin-bottom: 25px;
+}
+
+.product-container .title input {
+	margin-left:25px;
+	border-top-left-radius:5px;
+	border-top-right-radius:0;
+	border-bottom-right-radius:0;
+	border-bottom-left-radius:5px;
+}
+
 .product-cell .title {
 	font-size: 2.25rem;
 	margin-bottom: 10px;

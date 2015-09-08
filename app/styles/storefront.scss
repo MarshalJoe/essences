@@ -94,10 +94,11 @@
 	line-height: 20px;
 }
 
+
 //bootstrap extensions
 .dropdown-menu > li > a {
 	line-height:25px;
-	font-size: 1.5rem;
+	font-size: 1.75rem;
 	color: #181938;
 }
 
@@ -112,3 +113,20 @@
     display: block;
     margin-top: 0;
  }
+
+ // sticky footer code
+
+html, body {
+	height: 100%;
+}
+
+.wrapper {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -4em;
+}
+
+.footer, .push {
+	height: 4em;
+}

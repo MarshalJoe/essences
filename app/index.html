@@ -16,6 +16,7 @@
     <!-- endbuild -->
   </head>
   <body ng-app="storefrontApp" ng-cloak>
+    <div class="wrapper">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -65,6 +66,9 @@
 
     <route-loading-indicator></route-loading-indicator>  
     <div ng-if="!isRouteLoading" ng-view=""></div>
+
+    <div class="push"></div>
+    </div> <!-- end of wrapper --> 
 
     <div class="footer">
       <div class="container">

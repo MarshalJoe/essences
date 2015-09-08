@@ -1,3 +1,5 @@
+<div class="product-container">
+
 <h1>Checkout</h1>
 
 <form class="form-horizontal" role="form" ng-submit="createOrder(data)">
@@ -85,7 +87,7 @@
       </div>
 
       <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-8">
           <h3>Payment</h3>
         </div>
         <div class="col-md-4" ng-repeat="gateway in options.gateways">
@@ -99,4 +101,8 @@
       </div>
 
       <button class="btn btn-primary pull-right" type="submit" style="margin: 20px 0">Proceed to Payment</button>
-    </form>
+</form>
+
+
+
+</div>

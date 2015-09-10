@@ -28,11 +28,13 @@
             </a>
           </div>
           <p>{{product.description}}</p>
-          <span class="price pull-left">&#36;{{product.price}}</span>
-          <a ng-click="addToCart(product)" class="btn-category pull-right">
-            <span ng-show="!product.addStatus"><i class="glyphicon glyphicon-plus"></i> Add</span>
-            <span ng-show="product.addStatus">{{product.addStatus}}</span>
-          </a>
+          <div class="product-info">
+            <span class="price pull-left">&#36;{{product.price}}</span>
+            <a ng-click="addToCart(product)" class="btn-category pull-right">
+              <span ng-show="!product.addStatus">Add</span>
+              <span ng-show="product.addStatus">{{product.addStatus}}</span>
+            </a>
+          </div>
         </div>
     </div>
   </div>

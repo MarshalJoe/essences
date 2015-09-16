@@ -157,9 +157,15 @@ angular
         redirectTo: '/'
       });
   }).run(function(MoltinAuth, $rootScope) {
+    $rootScope.viewedProducts = [];
+
     MoltinAuth.then(function(moltin) {
       moltin.Cart.Contents(function(items) {
         $rootScope.cart = items;
+        $rootScope.$apply();
+      });
+      moltin.Category.List(null, function(categories) {
+        $rootScope.categories = categories;
         $rootScope.$apply();
       });
     });

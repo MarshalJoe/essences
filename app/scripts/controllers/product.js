@@ -11,6 +11,20 @@ angular.module('storefrontApp')
   .controller('ProductCtrl', function ($scope, $rootScope, product, moltin, $timeout) {
     $scope.product = product;
     $scope.addStatus = null;
+    $scope.viewedProducts = $rootScope.viewedProducts;
+
+    $scope.$on('$destroy', function (event) {
+      var match;
+      for (var index in $scope.viewedProducts) {
+        if ($scope.viewedProducts[index].title == product.title) {
+          return match = true;
+        }
+      }
+      if (!match) {
+        $rootScope.viewedProducts.push(product);
+      }
+      
+    });
 
     $scope.addToCart = function() {
       $scope.addStatus = 'Adding to cart...';

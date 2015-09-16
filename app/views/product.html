@@ -4,18 +4,16 @@
 			<div class="col-md-6">
 				<img class="product-image" ng-src="{{product.images[0]['url']['http'] }}">
 			</div>
-			<div class="col-md-6">
+			<div class="col-md-5">
+				<a onclick="window.history.back()">/back to shop</a>
 				<h1 class="title"> {{ product.title }} </h1>
-				<br>
 				<p ng-bind-html="product.description"></p>
 				<br>
 				<div class="price">&#36;{{ product.price }}</div>
 				<br>
-				<a class="btn-product" onclick="window.history.back()">Back</a>
-				&nbsp;
 				<a class="btn-product" ng-click="addToCart()">
-					<span ng-show="!addStatus">Add to Cart</span>
-            		<span ng-show="addStatus">{{addStatus}}</span>
+					<span ng-show="!addStatus">Add to cart</span>
+            		<span ng-show="addStatus">Adding ...</span>
 				</a>
 				<div class="social">
 					<div class="social-icon"><a><i class="fa fa-twitter fa-2x"></i></a></div>
@@ -25,17 +23,23 @@
 				</div>
 			</div>
 		</div>
-		<div class="row" ng-hide="viewedProducts.length == 0">
+		<div class="row" ng-hide="viewedProducts.length == 0" style="margin-top:5px">
 			<div>
+				<br>
+				<br>
 				<h3>Recently viewed</h3>
+				<br>
+				<br>
 				<div ng-repeat="product in viewedProducts track by $index">
 					<div class="col-md-2">
-						<figure>
-						<a ng-href="#/product/{{product.id}}">
-							<img class="viewed-product-image" ng-src="{{product.images[0]['url']['http'] }}">
-							<figcaption>{{product.title}}</figcaption>
-						</a>
-						</figure>
+						<div class="viewed-product-container">
+							<figure>
+							<a ng-href="#/product/{{product.id}}">
+								<img class="viewed-product-image" ng-src="{{product.images[0]['url']['http'] }}">
+								<figcaption>{{product.title}}</figcaption>
+							</a>
+							</figure>
+						</div>
 					</div>
 				</div>
 			</div>

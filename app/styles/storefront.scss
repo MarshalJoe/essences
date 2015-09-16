@@ -118,16 +118,19 @@
 
 .product-view .product-image {
 	width:100%;
- 	height: auto;
- 	padding:50px;
+ 	height: 100%;
+ 	margin-right:15px;
+ 	padding-left:35px;
+ 	padding-right:35px;
 }
 
 .product-view p {
+	margin-top:15px;
 	font-size:2rem;
+	color:gray;
 }
 
 .product-view .title {
-	margin-top:40px;
 	margin-bottom:10px;
 }
 
@@ -148,9 +151,19 @@
 	margin-right:15px;
 }
 
+.viewed-product-container {
+	width:100%	
+}
+
+.viewed-product-container figure figcaption {
+	padding-top:10px;
+	font-size:1.75rem;
+	text-align:center;
+}
+
 .viewed-product-image {
 	width:100%;
-	height:auto;
+	height:150px;;
 	display:inline;
 }
 
@@ -182,9 +195,10 @@
 
 
 //bootstrap extensions
+
 .dropdown-menu > li > a {
-	line-height:25px;
-	font-size: 2rem;
+	line-height:2.5rem !important;
+	font-size: 2rem !important;
 	color: #181938;
 }
 

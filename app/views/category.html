@@ -1,61 +1,16 @@
-  <md-content layout="row" layout-wrap layout-padding>
-      <span flex="25" ng-repeat="product in products">
-        <md-card>
-          <a ng-href="#/product/{{product.id}}">
-            <img ng-src="{{product.images[0]['url']['http'] }}" class="md-card-image">
-          </a>
-          <md-card-content>
-            <h2 class="md-display-1">{{product.title}}</h2>
-            <p class="md-body-1">{{product.description}}</p>
-          </md-card-content>
-          <div class="md-actions" layout="row" layout-align="end center">
-            <span style="margin-left:15px" class="md-headline">&#36;{{product.price}}</span>
-            <span flex></span>
-            <md-button>Add</md-button>
-          </div>
+<md-content layout="row" layout-wrap layout-padding>
+    <span flex="25" ng-repeat="product in products">
+      <md-card>
+        <a ng-href="#/product/{{product.id}}"><img ng-src="{{product.images[0]['url']['http'] }}" class="md-card-image"></a>
+        <md-card-content>
+          <h2 class="md-display-1">{{product.title}}</h2>
+          <p class="md-body-1">{{product.description}}</p>
         </md-card-content>
-      </span> 
-  <md-content>
-
-
-<!-- <div class="product-container">
-  <div class="title">
-    <div class="row">
-
-
-      <form class="form-inline">
-        <div class="form-group form-group-lg">
-          <label for="exampleInputName2">{{ category.title }}</label>
-          
-
-          <div class="input-group">
-            <input class="input-lg" type="search" class="form-control" ng-model="searchProducts.title" id="exampleInputName2" placeholder="Filter Products" aria-describedby="addon">
-            <span class="input-group-addon" id="addon"> <i class="glyphicon glyphicon-search"></i> </span>
-          </div>
+        <div class="md-actions" layout="row" layout-align="end center">
+          <span style="margin-left:15px" class="md-headline">&#36;{{product.price}}</span>
+          <span flex></span>
+          <md-button ng-click="addToCart(product)">Add</md-button>
         </div>
-      </form>
-
-
-    </div>
-  </div>
-  <div class="row">
-    <div ng-repeat="product in products | filter:searchProducts">
-        <div class="col-md-3 product-cell">
-          <div class="title">{{product.title}}</div>
-          <div class="product-cell-image-container">
-            <a ng-href="#/product/{{product.id}}">
-              <img class="product-cell-image" ng-src="{{product.images[0]['url']['http']}}">
-            </a>
-          </div>
-          <p>{{product.description}}</p>
-          <div class="product-info">
-            <span class="price pull-left">&#36;{{product.price}}</span>
-            <a ng-click="addToCart(product)" class="btn-category pull-right">
-              <span ng-show="!product.addStatus">Add</span>
-              <span ng-show="product.addStatus">{{product.addStatus}}</span>
-            </a>
-          </div>
-        </div>
-    </div>
-  </div>
-</div>
+      </md-card-content>
+    </span> 
+<md-content>

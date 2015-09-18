@@ -1,49 +1,38 @@
-<!-- <div class="product-container">
-	<div class="product-view">
-		<div class="row">
-			<div class="col-md-6">
-				<img class="product-image" ng-src="{{product.images[0]['url']['http'] }}">
-			</div>
-			<div class="col-md-5">
-				<a onclick="window.history.back()">/back to shop</a>
-				<h1 class="title"> {{ product.title }} </h1>
-				<p ng-bind-html="product.description"></p>
-				<br>
-				<div class="price">&#36;{{ product.price }}</div>
-				<br>
-				<a class="btn-product" ng-click="addToCart()">
-					<span ng-show="!addStatus">Add to cart</span>
-            		<span ng-show="addStatus">Adding ...</span>
-				</a>
-				<div class="social">
-					<div class="social-icon"><a><i class="fa fa-twitter fa-2x"></i></a></div>
-					<div class="social-icon"><a><i class="fa fa-facebook fa-2x"></i></a></div>
-					<div class="social-icon"><a><i class="fa fa-pinterest-p fa-2x"></i></a></div>
-					<div class="social-icon"><a><i class="fa fa-google-plus fa-2x"></i></a></div>
-				</div>
-			</div>
-		</div>
-		<div class="row" ng-hide="viewedProducts.length == 0" style="margin-top:5px">
-			<div>
-				<br>
-				<br>
-				<h3>Recently viewed</h3>
-				<br>
-				<div ng-repeat="product in viewedProducts track by $index">
-					<div class="col-md-2">
-						<div class="viewed-product-container">
-							<figure>
-							<a ng-href="#/product/{{product.id}}">
-								<img class="viewed-product-image" ng-src="{{product.images[0]['url']['http'] }}">
-								<figcaption>{{product.title}}</figcaption>
-							</a>
-							</figure>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+<br>
+<br>
+
+<md-content layout="row" layout-wrap layout-padding>
+	<span flex="15"></span>
+	<div flex><img style="width:100%" ng-src="{{product.images[0]['url']['http'] }}"></div>
+	<span flex="5"></span>
+	<div flex>
+		<h1 class="md-display-2">{{product.title}}</h1>
+		<br>
+		<p class="md-headline">{{product.description}}</p>
+		<br>
+		<div class="md-display-1">&#36;{{product.price}}</div>
+		<br>
+		<md-button style="margin-left:0;" class="md-primary md-raised" ng-click="addToCart(product)">add to cart</md-button>
 	</div>
-</div> -->
+	<span flex="15"></span>
+</md-content>
+
+<br>
+<br>
+<br>
+
+<!-- <h3 class="md-headline" ng-show="viewedProducts.length != 0" style="margin-left:25px">Recently viewed</h3> -->
+<md-content layout="row" layout-wrap layout-padding>
+    <span flex="20" ng-repeat="product in viewedProducts">
+      <a ng-href="#/product/{{product.id}}">
+	      <md-card>
+	          <img ng-src="{{product.images[0]['url']['http'] }}" class="md-card-image">
+	        <md-card-content>
+	          <h2 class="md-title">{{product.title}}</h2>
+	        </md-card-content>
+	      </md-card>
+      </a>
+    </span> 
+<md-content>
 
 

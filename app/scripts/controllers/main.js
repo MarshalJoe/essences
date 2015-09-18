@@ -8,10 +8,10 @@
  * Controller of the storefrontApp
  */
 angular.module('storefrontApp')
-.controller('MainCtrl', function ($scope, $location, MoltinAuth) {
-	
+.controller('MainCtrl', function ($scope, $location, MoltinAuth, $mdDialog, $timeout) {
+
+
     $scope.go = function (path) {
     	$location.path(path);
-    }
-
+    };
 });

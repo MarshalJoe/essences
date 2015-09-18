@@ -22,32 +22,6 @@ body {
   padding-right: 15px;
 }
 
-/* Custom page header */
-.header {
-  height: 80px;
-  line-height:80px;
-  border-bottom: 1px solid gray;
-  margin-bottom:0;
-}
-
-.header .navigation {
-  padding-left: 10%;
-}
-
-.header .navigation a {
-  font-size: 2rem;
-  color:#181938;
-}
-
-.header .navigation a:hover {
-  text-decoration:none;
-}
-
-.header .navigation span,
-.header .navigation .extra-item {
-  margin-left: 6%;
-}
-
 #cart {
   margin-right: 50px;
 }

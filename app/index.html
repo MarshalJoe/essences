@@ -11,6 +11,7 @@
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css">
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/storefront.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
@@ -23,17 +24,18 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div class="header">
-    
-            <nav class="navigation">
+    <md-toolbar layout="row">
 
-              <a href="#/" class="nav-item">HOME</a>
+        <div class="md-toolbar-tools">
 
-              <span dropdown>
-                <a href class="nav-item" id="simple-dropdown">
+              <span flex="5"></span>
+              <span flex><a href="#/" class="md-headline">Essences</a></span>
+              
+              <span dropdown flex>
+                <a href class="md-headline">
                   PRODUCTS <i class="glyphicon glyphicon-chevron-right"></i>
                 </a>
-                <ul class="dropdown-menu" aria-labelledby="simple-dropdown">
+                <ul class="dropdown-menu">
                   <li ng-repeat="category in categories">
                     <a ng-href="#/category/{{category.id}}">{{category.title}}</a>
                   </li>
@@ -41,29 +43,30 @@
               </span>
 
 
-              <span dropdown>
-                <a href class="nav-item" id="simple-dropdown">
+              <span dropdown flex>
+                <a href class="md-headline">
                   SCENTS <i class="glyphicon glyphicon-chevron-right"></i>
                 </a>
-                <ul class="dropdown-menu" aria-labelledby="simple-dropdown">
+                <ul class="dropdown-menu">
                   <li ng-repeat="category in categories">
                     <a ng-href="#/category/{{category.id}}">{{category.title}}</a>
                   </li>
                 </ul>
               </span>
-
-
-            <a class="extra-item" ng-href="#/contact">CONTACT US</a>
+              
+              <span flex><a class="md-headline" ng-href="#/contact">CONTACT</a></span>
             
-            <span ng-if="cart" id="cart" class="pull-right">
+              <span flex="25"></span>
+
+            <span ng-if="cart" id="cart" class="md-headline">
               <a href="#/cart">
                 CART<strong> ( {{cart.total_items }} ) </strong>  
               </a>
             </span>
 
-            </nav>
+        </div>
             
-    </div>
+    </md-toolbar>
 
     <route-loading-indicator></route-loading-indicator>  
     <div ng-if="!isRouteLoading" ng-view=""></div>
@@ -101,9 +104,11 @@
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
     <!-- endbower -->
+    <script src="bower_components/angular-aria/angular-aria.min.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+    <script src="bower_components/angular-material/angular-material.js"></script>
     <script src="scripts/vendor/moltin.min.js"></script>
     <!-- endbuild -->
-    <script src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
 
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->

@@ -1,38 +1,42 @@
 <br>
 <br>
+<br>
 
 <md-content layout="row" layout-wrap layout-padding>
 	<span flex="15"></span>
 	<div flex><img style="width:100%" ng-src="{{product.images[0]['url']['http'] }}"></div>
 	<span flex="5"></span>
-	<div flex>
-		<h1 class="md-display-2">{{product.title}}</h1>
+	<span flex>
+		<h1 class="md-display-1">{{product.title}}</h1>
 		<br>
-		<p class="md-headline">{{product.description}}</p>
+		<p style="color:gray" class="md-title">{{product.description}}</p>
 		<br>
 		<div class="md-display-1">&#36;{{product.price}}</div>
 		<br>
 		<md-button style="margin-left:0;" class="md-primary md-raised" ng-click="addToCart(product)">add to cart</md-button>
-	</div>
+	</span>
 	<span flex="15"></span>
 </md-content>
 
 <br>
 <br>
 <br>
-<md-divider></md-divider>
-<!-- <h3 class="md-headline" ng-show="viewedProducts.length != 0" style="margin-left:25px">Recently viewed</h3> -->
-<md-content layout="row" layout-wrap layout-padding>
-    <span flex="20" ng-repeat="product in viewedProducts">
-      <a ng-href="#/product/{{product.id}}">
-	      <md-card>
-	          <img ng-src="{{product.images[0]['url']['http'] }}" class="md-card-image">
-	        <md-card-content>
-	          <h2 class="md-title">{{product.title}}</h2>
-	        </md-card-content>
-	      </md-card>
-      </a>
-    </span> 
-<md-content>
+<br>
 
+<div ng-show="viewedProducts.length != 0">
+	<md-divider></md-divider>
+	<h3 class="md-headline" style="margin-left:25px">Recently viewed</h3>
+	<md-content layout="row" layout-wrap layout-padding>
+	    <span flex="20" ng-repeat="product in viewedProducts">
+	      <a ng-href="#/product/{{product.id}}">
+		      <md-card>
+		          <img ng-src="{{product.images[0]['url']['http'] }}" class="md-card-image">
+		        <md-card-content>
+		          <h2 class="md-title">{{product.title}}</h2>
+		        </md-card-content>
+		      </md-card>
+	      </a>
+	    </span> 
+	<md-content>
+</div>
 

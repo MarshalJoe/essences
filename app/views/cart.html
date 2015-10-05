@@ -1,26 +1,37 @@
-<div class="product-container">
-  <h3>Your Cart:</h3>
+<md-whiteframe class="md-whiteframe-z5">
+  <br>
+  <div layout="row">
+    <span flex="15"></span>
+    <md-list flex>
+      <h2 class="md-display-2">Your Cart</h2>
+      <br>
+      <md-list-item layout="row" layout-align="center center">
+        <p class="md-headline" flex>Item</p>
+        <p class="md-headline" style="text-align:center;" flex>Qty</p>
+        <p class="md-headline" style="text-align:right;" flex>Price</p>
+      </md-list-item>
+      <md-list-item layout="row" layout-align="center center" ng-repeat="(id, product) in cart.contents">
+        <p class="md-headline" flex>{{product.name}}</p>
+        <p class="md-headline" style="text-align:center;" flex>{{product.quantity}}</p>
+        <p class="md-headline" style="text-align:right;" flex>{{product.pricing.formatted.without_tax}}</p>
+      </md-list-item>
+      <md-list-item layout="row" layout-align="center center">
+        <p flex></p>
+        <p flex></p>
+        <p class="md-headline md-accent" style="text-align:right;" flex>Total: {{cart.totals.formatted.with_tax}}</p>
+      </md-list-item>
+    </md-list>
+    <span flex="15"></span>
+  </div>
+  <br>
+  <div layout="row">
+    <span flex="15"></span>
+      <md-button flex href="#/checkout" class="md-primary checkout-button md-raised">Checkout</md-button>
+    <span flex="15"></span>
+  </div>
+</md-whiteframe>
 
-  <table class="table table-striped table-responsive">
-    <thead>
-      <tr>
-        <th>Item</th>
-        <th>Qty</th>
-        <th>Price</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr ng-repeat="(id, product) in cart.contents">
-        <td>{{product.name}}</td>
-        <td>{{product.quantity}}</td>
-        <td>{{product.pricing.formatted.without_tax}}</td>
-      </tr>
-    </tbody>
-  </table>
 
-  <h4>Total Price: {{cart.totals.formatted.with_tax}}</h4>
 
-  <a href="#/checkout" class="btn btn-success">Checkout</a>
-</div>
 
 

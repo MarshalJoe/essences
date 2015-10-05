@@ -1,15 +1,15 @@
 <md-content layout="row" layout-wrap layout-padding>
     <span flex="25" ng-repeat="product in products">
-      <md-card>
+      <md-card class="md-whiteframe-z3">
         <a ng-href="#/product/{{product.id}}"><img ng-src="{{product.images[0]['url']['http'] }}" class="md-card-image"></a>
         <md-card-content>
-          <h2 class="md-display-1">{{product.title}}</h2>
+          <h2 class="md-headline">{{product.title}}</h2>
           <p class="md-body-1">{{product.description}}</p>
         </md-card-content>
         <div class="md-actions" layout="row" layout-align="end center">
           <span style="margin-left:15px" class="md-headline">&#36;{{product.price}}</span>
           <span flex></span>
-          <md-button ng-click="addToCart(product)">Add</md-button>
+          <md-button class='md-primary' ng-click="addToCart(product)">Add</md-button>
         </div>
       </md-card-content>
     </span> 

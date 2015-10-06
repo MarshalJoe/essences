@@ -13,6 +13,7 @@ angular.module('storefrontApp')
     $scope.cart = cart;
     $scope.options = options;
     $scope.fields = fields;
+    $scope.showShipping = true;
 
     $scope.createOrder = function() {
       moltin.Cart.Order({

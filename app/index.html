@@ -51,13 +51,15 @@
               
               <span flex><a class="md-headline" ng-href="#/contact">CONTACT</a></span>
             
-              <span flex="25"></span>
+              <span flex="20"></span>
 
-            <span ng-if="cart" id="cart" class="md-headline">
-              <a href="#/cart">
-                CART<strong> ( {{cart.total_items }} ) </strong>  
-              </a>
-            </span>
+              <span flex="10">
+                <span ng-if="cart" id="cart" class="md-headline">
+                  <a href="#/cart">
+                    CART<strong> ( {{cart.total_items }} ) </strong>  
+                  </a>
+                </span>
+              </span>
 
         </div>
             

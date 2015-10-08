@@ -3,8 +3,7 @@
   var routeLoadingIndicator = function($rootScope) {
     return {
       restrict: 'E',      
-      template: "<div layout='row' layout-align='center center' ng-if='isRouteLoading'> <div></div> <div><br><br><br><br><br><md-progress-circular md-mode='indeterminate'></md-progress-circular></div><div></div></div>",
-
+      template: "<div layout='row' layout-align='center center' ng-if='isRouteLoading'> <div></div> <div><br><br><br><br><br><br><br><br> <md-progress-circular md-mode='indeterminate'></md-progress-circular></div><div></div></div>",
       link: function(scope, elem, attrs) {
         scope.isRouteLoading = false;
 

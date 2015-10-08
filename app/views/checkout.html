@@ -1,99 +1,103 @@
 <br>
 <div layout="row">
   <span flex="15"></span>
-  <span style="padding:15px;" flex>
-    <h1 class="md-display-1">Billing Address</h1>
-    <br>
-    <div layout="column">
-    <md-content layout-padding class="md-whiteframe-z5">
-      <form name="userForm">
-        <md-input-container flex ng-repeat="field in fields">
-          <label class="billing" for="bill_{{ field.slug }}">{{ field.name }} <span class="required" ng-if="field.required">*</span></label>
-          <input ng-model="data.bill[field.slug]">
-        </md-input-container>
-      </form>
-    </md-content>
-    </div>
+  <span flex>
+    <h2 class="md-display-1">Checkout</h2>
+    <p class="md-subhead">Lorem ipsum hipster gypsum blah blah Lorem ipsum hipster gypsum blah blah Lorem ipsum hipster gypsum blah blah Lorem ipsum hipster gypsum blah blah Lorem ipsum hipster gypsum blah blah Lorem ipsum hipster gypsum blah blah Lorem ipsum hipster gypsum blah blah Lorem ipsum hipster gypsum blah blah.</p>  
   </span>
+    <br>
   <span flex="15"></span>
 </div>
 
 <div layout="row">
   <span flex="15"></span>
-  <span style="padding:15px;" flex><h1 class="md-headline">Ship to the same address?</h1>
+  <span flex>
+    <md-toolbar ng-if="true">
+      <div class="md-toolbar-tools">
+        <h3>Billing Address</h3>
+      </div>
+    </md-toolbar>
+    <md-content layout-padding class="md-whiteframe-z5">
+      <form name="userForm">
+        <md-input-container flex ng-repeat="field in fields">
+          <label class="billing" for="bill_{{ field.slug }}">{{ field.name }} <span class="required" ng-if="field.required" style="color:red">*</span></label>
+          <input ng-model="data.bill[field.slug]">
+        </md-input-container>
+      </form>
+    </md-content>
+  </span>
+  <span flex="15"></span>
+</div>
+
+<br>
+
+<div layout="row">
+  <span flex="15"></span>
+  <span flex><h1 class="md-headline">Ship to the same address?</h1>
     <md-checkbox md-no-ink ng-model="showShipping" class="md-primary">Yes</md-checkbox>  
   </span>
   <span flex="15"></span>
 </div>
 
+<br>
+
 <div layout="row" ng-hide="showShipping">
   <span flex="15"></span>
-  <span style="padding:15px;" flex>
-    <h1 class="md-display-1">Shipping Address</h1>
-    <br>
-    <div layout="column">
+  <span flex>
+    <md-toolbar ng-if="true">
+      <div class="md-toolbar-tools">
+        <h3>Shipping Address</h3>
+      </div>
+    </md-toolbar>
     <md-content layout-padding class="md-whiteframe-z5">
       <form name="userForm">
         <md-input-container flex ng-repeat="field in fields">
-          <label class="billing" for="bill_{{ field.slug }}">{{ field.name }} <span class="required" ng-if="field.required">*</span></label>
+          <label class="billing" for="bill_{{ field.slug }}">{{ field.name }} <span class="required" ng-if="field.required" style="color:red">*</span></label>
           <input ng-model="data.bill[field.slug]">
         </md-input-container>
       </form>
     </md-content>
-    </div>
   </span>
   <span flex="15"></span>
 </div>
 
+<br>
+
 <div layout="row">
   <span flex="15"></span>
-  <span flex style="padding:15px;">
-    <h3 class="md-headline">Your Order</h3>
-
-    <md-list-item layout="row" layout-align="center center">
-      <p class="md-title" flex>Product</p>
-      <p class="md-title" style="text-align:center;" flex>Qty</p>
-      <p class="md-title" style="text-align:right;" flex>Totals</p>
-    </md-list-item>
-
-    <md-list-item layout="row" layout-align="center center" ng-repeat="(key,product) in cart.contents">
-      <p class="md-title" flex>{{ product.title }}</p>
-      <p class="md-title" style="text-align:center;" flex>{{ product.quantity }}</p>
-      <p class="md-title" style="text-align:right;" flex>{{ product.totals.formatted.with_tax }}</p>
-    </md-list-item>
+  <span flex>
+    <md-toolbar ng-if="true">
+      <div class="md-toolbar-tools">
+        <h3>Your Order</h3>
+      </div>
+    </md-toolbar>
+    <md-content class="md-whiteframe-z5">
+      <md-list-item layout="row" layout-align="center center">
+        <p class="md-title" flex><b>Product</b></p>
+        <p class="md-title" style="text-align:center;" flex><b>Qty</b></p>
+        <p class="md-title" style="text-align:right;" flex><b>Totals</b></p>
+      </md-list-item>
+      <md-list-item layout="row" layout-align="center center" ng-repeat="(key,product) in cart.contents">
+        <p class="md-title" flex>{{ product.title }}</p>
+        <p class="md-title" style="text-align:center;" flex>{{ product.quantity }}</p>
+        <p class="md-title" style="text-align:right;" flex>{{ product.totals.formatted.with_tax }}</p>
+      </md-list-item>
+      <md-list-item layout="row" layout-align="center center">
+        <p flex></p>
+        <p flex></p>
+        <p class="md-title" style="text-align:right;" flex>Cart Subtotal: {{ cart.totals.formatted.without_tax }}</p>
+      </md-list-item>
+      <md-list-item layout="row" layout-align="center center">
+        <p flex></p>
+        <p flex></p>
+        <p class="md-title" style="text-align:right;" flex>Total: {{ cart.totals.formatted.with_tax }}</p>
+      </md-list-item>
+    </md-content>
   </span>  
   <span flex="15"></span>
 </div>  
 
-            <table class="table table-bordered table-responsive">
-              <thead>
-                <tr>
-                  <th>Product</th>
-                  <th>Qty</th>
-                  <th>Totals</th>
-                </tr>
-              </thead>
-              <tfoot>
-                <tr class="subtotal">
-                  <td></td>
-                  <td><b>Cart Subtotal</b></td>
-                  <td>{{ cart.totals.formatted.without_tax }}</td>
-                </tr>
-                <tr class="subtotal">
-                  <td></td>
-                  <td><b>Order Total</b></td>
-                  <td>{{ cart.totals.formatted.with_tax }}</td>
-                </tr>
-              </tfoot>
-              <tbody>
-                <tr ng-repeat="(key,product) in cart.contents">
-                  <td><a href="#/product/{{ product.id }}">{{ product.title }}</a></td>
-                  <td>{{ product.quantity }}</td>
-                  <td>{{ product.totals.formatted.with_tax }}</td>
-                </tr>
-              </tbody>
-            </table>
-            <div class="row" style="margin-bottom: 20px" ng-if="options.shipping.methods.length">
+            <!-- <div class="row" style="margin-bottom: 20px" ng-if="options.shipping.methods.length">
               <h3>Shipping</h3>
               <div class="row box">
                 <div class="carrier" ng-repeat="carrier in options.shipping.methods">
@@ -106,8 +110,7 @@
                   </div>
                 </div>
               </div>
-            </div>
-</div>
+            </div> -->
 
 <!-- <form class="form-horizontal" role="form" ng-submit="createOrder(data)">
 

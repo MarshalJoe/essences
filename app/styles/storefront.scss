@@ -213,6 +213,10 @@ label.billing {
 
 //bootstrap extensions
 
+.dropdown-menu {
+	z-index:100;
+}
+
 .dropdown-menu > li > a {
 	line-height:2.5rem !important;
 	font-size: 2rem !important;
